@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+    <title>NLP</title>
+</head>
+<body>
+    <h1>Demo sửa lỗi chính tả</h1>
+    <div class="container">
+        <form method="POST" action="http://localhost:5000">
+            <textarea rows="10" cols="55" name="tweet">{% if tweet %}{{tweet}}{% endif %}</textarea>
+            <button type="submit" class="btn-dark" >Sửa lỗi</button>
+        </form>
+        <div class="result">
+            {% if data %}
+                <p>{{data}}</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
